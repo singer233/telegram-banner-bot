@@ -35,8 +35,6 @@ jobs:
 
     - name: Build
       run: go build -v -o telegram-banner-bot-${{ matrix.os }}-${{ matrix.arch }} ./
-    - run: mkdir -p test
-    - run: echo 1 > test/1
     - name: List all build
       run: ls -R
     - name: list crrent_dir
@@ -45,4 +43,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: telegram-banner-bot-${{ matrix.os }}-${{ matrix.arch }}
-        path: test/1
+        path: telegram-banner-bot-${{ matrix.os }}-${{ matrix.arch }}
