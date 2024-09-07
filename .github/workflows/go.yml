@@ -36,7 +36,10 @@ jobs:
     - name: Build
       run: go build -v -o telegram-banner-bot-${{ matrix.os }}-${{ matrix.arch }} ./
 
-  
+    - name: List all build
+      run: ls -R
+    - name: list crrent_dir
+      run: pwd
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
